@@ -1,8 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:comfortley_web/Screens/ServiceProvider/AboutAndReviews/body.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:paulonia_cache_image/paulonia_cache_image.dart';
 
 import '../constants.dart';
 
@@ -12,7 +12,7 @@ class ServiceProviderCardForHorizontalSlider extends StatefulWidget {
   final num? rating;
   final QueryDocumentSnapshot? document;
 
-  ServiceProviderCardForHorizontalSlider(
+  const ServiceProviderCardForHorizontalSlider(
       {this.serviceProviderName, this.numberOfReviews, this.rating,this.document});
 
   @override
@@ -22,7 +22,7 @@ class ServiceProviderCardForHorizontalSlider extends StatefulWidget {
 class _ServiceProviderCardForHorizontalSliderState extends State<ServiceProviderCardForHorizontalSlider> {
   String? imageURL;
 
-  getImage () async {
+  Future <void> getImage () async {
     final ref = FirebaseStorage.instance
         .ref()
         .child('Restaurant Images')
@@ -31,7 +31,7 @@ class _ServiceProviderCardForHorizontalSliderState extends State<ServiceProvider
     setState(() {
       imageURL = url.toString();
     });
-    print('image loaded successfully');
+    print(imageURL);
   }
 
   @override
@@ -60,14 +60,11 @@ class _ServiceProviderCardForHorizontalSliderState extends State<ServiceProvider
                 height: 100,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(5.0),
-                  child: (imageURL != null)?CachedNetworkImage(
-                    imageUrl: imageURL.toString(),
-                    fit: BoxFit.fill,
-                    progressIndicatorBuilder: (context,url,downloadProgress) => Center(
-                      child: CircularProgressIndicator(
-                        value: downloadProgress.progress,
-                      ),
+                  child: (imageURL != null)?Image(
+                    image: PCacheImage(
+                      imageURL.toString(),
                     ),
+                    fit: BoxFit.fill,
                   ):Center(child: CircularProgressIndicator()),
                 ),
               ),
@@ -125,7 +122,7 @@ class ServiceProviderCardForVerticalSlider extends StatefulWidget {
   final num? rating;
   final QueryDocumentSnapshot? doc;
 
-  ServiceProviderCardForVerticalSlider({
+  const ServiceProviderCardForVerticalSlider({
     this.serviceProviderName,
     this.numberOfReviews,
     this.rating,
@@ -179,15 +176,11 @@ class _ServiceProviderCardForVerticalSliderState
               height: 200,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(5.0),
-                child: (imageURL != null) ? CachedNetworkImage(
-                  imageUrl: imageURL.toString(),
+                child: (imageURL != null) ? Image(
+                  image: PCacheImage(
+                    imageURL.toString(),
+                  ),
                   fit: BoxFit.fill,
-                  progressIndicatorBuilder: (context, url, downloadProgress) =>
-                      Center(
-                        child: CircularProgressIndicator(
-                          value: downloadProgress.progress,
-                        ),
-                      ),
                 ) : Center(child: CircularProgressIndicator()),
               ),
             ),

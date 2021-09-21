@@ -48,23 +48,6 @@ class MostOrdersSlider extends StatelessWidget {
               ),
             ),
           ),
-          // SizedBox(
-          //   height: 170,
-          //   child: StreamBuilder<QuerySnapshot>(
-          //     stream: mostRatings,
-          //     builder: (BuildContext context,
-          //         AsyncSnapshot<QuerySnapshot> snapshot) {
-          //       if (!snapshot.hasData) {
-          //         return Center(child: CircularProgressIndicator());
-          //       } else {
-          //         return new ListView(
-          //           scrollDirection: Axis.horizontal,
-          //           children: getRestaurants(snapshot),
-          //         );
-          //       }
-          //     },
-          //   ),
-          // ),
           SizedBox(
             height: 170,
             child: StreamBuilder<QuerySnapshot>(
