@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "662180274570",
+    "project_id": "comfortley-pk",
+    "storage_bucket": "comfortley-pk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662180274570:android:d655f05c4de599c8a6e873",
+        "android_client_info": {
+          "package_name": "com.example.comfortley_web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662180274570-kv7pbek9046c1hrc95j8njh3egbvllrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhcsf5q7woW2oEeqmJma7iOpxskhxJnXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662180274570-kv7pbek9046c1hrc95j8njh3egbvllrk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "662180274570-o40kp16qhmn2h158qman6ngr9ki2irlb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.comfortley"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662180274570:android:812342f3a51b88e7a6e873",
+        "android_client_info": {
+          "package_name": "com.tauqeer.comfortley"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662180274570-kv7pbek9046c1hrc95j8njh3egbvllrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhcsf5q7woW2oEeqmJma7iOpxskhxJnXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662180274570-kv7pbek9046c1hrc95j8njh3egbvllrk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "662180274570-o40kp16qhmn2h158qman6ngr9ki2irlb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.comfortley"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
